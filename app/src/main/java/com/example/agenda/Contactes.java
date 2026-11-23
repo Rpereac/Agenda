@@ -1,5 +1,6 @@
 package com.example.agenda;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,16 +17,15 @@ public class Contactes extends ArrayAdapter<Contacte> {
         super(context, R.layout.contacte_detail, contactos);
     }
 
-    @NonNull
     @Override
-    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         View item = convertView != null
                 ? convertView
-                : LayoutInflater.from(getContext()).inflate(R.layout.contacte_detail, parent, false);
+                : LayoutInflater.from(getContext()).inflate(R.layout.list_view, parent, false);
 
         Contacte contacte = getItem(position);
-        ((TextView) item.findViewById(R.id.nom)).setText(contacte.getNom());
-        ((TextView) item.findViewById(R.id.telefon)).setText(String.valueOf(contacte.getTelefon()));
+        ((TextView) item.findViewById(R.id.nom)).setText("Nombre: " + contacte.getNom());
+        ((TextView) item.findViewById(R.id.telefon)).setText("Telefon: " + String.valueOf(contacte.getTelefon()));
         return item;
     }
 }

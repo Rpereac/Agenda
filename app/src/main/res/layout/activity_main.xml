@@ -3,10 +3,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginVertical="20dp"
+    android:layout_marginHorizontal="10dp">
 
     <ListView
         android:id="@+id/listContactes"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>
